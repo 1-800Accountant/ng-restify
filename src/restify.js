@@ -1,3 +1,9 @@
+/*
+ * Restify v0.3.1
+ * (c) 2013 Ilan Frumer
+ * License: MIT
+*/
+
 'use strict';
 
 angular.module('restify', []);

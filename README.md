@@ -1,12 +1,10 @@
-# [Restify](https://github.com/IlanFrumer/Restify)
+# Restify
 Restful factory for AngularJS.
-
-[![Build Status](https://travis-ci.org/IlanFrumer/Restify.png?branch=master)](https://travis-ci.org/IlanFrumer/Restify)
+Used [Restify](https://github.com/IlanFrumer/Restify). Ported to ES6 and published to npm.
 
 ### Install
 
-- `bower install restify`
-- `<script src="bower_components/restify/dist/restify.min.js">`
+- `npm install ng-restify`
 
 ### Dependencies
 
@@ -24,8 +22,8 @@ app = angular.module('yourModule',['restify'])
 #       and then pass it all over the place
 
 app.factory 'API', ['restify',(restify)->
-  
-  # restify 
+
+  # restify
   # gets a base url and a configuration block
   # returns a Restified Object
 
@@ -67,7 +65,7 @@ app.controller 'MyCtrl',['$scope', 'API', ($scope, API)->
     # PATCH /api/users/123
     user.$patch({password: password})
 
-  $scope.remove (user)->    
+  $scope.remove (user)->
     user.$delete().then ()->
       $scope.users = _.without($scope.users,user)
 ]
@@ -80,7 +78,7 @@ app.controller 'MyCtrl',['$scope', 'API', ($scope, API)->
       <input type="text" ng-model="user.name">
       <input type="text" ng-model="user.email">
       <button ng-click="save(user)">Save</button>
-      <button ng-click="remove(user)">Remove</button>      
+      <button ng-click="remove(user)">Remove</button>
       <button ng-click="getImages(user)">See Images</button>
       <ul>
         <li ng-repeat="image in user.images">
@@ -88,7 +86,7 @@ app.controller 'MyCtrl',['$scope', 'API', ($scope, API)->
         </li>
       </ul>
     </li>
-  </ul>  
+  </ul>
 ````
 
 ### Restify Class
@@ -109,7 +107,7 @@ Owned properties are ment to be used internally, don't mess with them!
 
 * **$get()**: getting the response and restifying it
 * **$uget()**: getting the response without restifying it
-* **$delete()**: 
+* **$delete()**:
 * **$post([data])**: If data is not provided then this object is sent stripped from functions or Restified objects.
 * **$patch([data])**: If data is not provided then this object is sent stripped from functions or Restified objects.
 * **$put([data])**: If data is not provided then this object is sent stripped from functions or Restified objects.
