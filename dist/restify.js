@@ -160,7 +160,7 @@
 	      this.$$route = route;
 	      this.$$parent = parent;
 	      this.$$config = {};
-	      this.push = Object.create(Array.prototype.push);
+	      this.push = Array.prototype.push;
 
 	      var _loop = function _loop(key) {
 	        var val = route[key];

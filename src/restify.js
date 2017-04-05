@@ -98,7 +98,7 @@ angular.module('restify').factory('restify', ['$http','$q', function($http, $q){
       this.$$route = route;
       this.$$parent = parent;
       this.$$config = {};
-      this.push = Object.create(Array.prototype.push);
+      this.push = Array.prototype.push;
 
       for (let key in route) {
         let val = route[key];
